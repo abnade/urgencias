@@ -32,8 +32,39 @@ $(document).ready(function() {
    "columns": [
      { "data": "sector" },
      { "data": "ubicacion" },
-     { "data": "color" },
-     { "data": "registro" },
+     //{ "data": "color" },
+     { "mData": "color",
+       "mRender": function (data, type, row) {
+         var color=''
+         switch(data){
+         case 'Verde':
+         color='success';
+         break;
+         case 'Amarillo':
+         color='warning';
+         break;
+         case 'Naranja':
+         color='orange';
+         break;
+         case 'Rojo':
+         color='danger';
+         break;
+         default:
+         color='secondary';
+         break; }
+         return '<i class="nav-icon far fa-circle text-'+color+'"></i>';
+
+       }},
+     { "mData": "registro",
+       "mRender": function (data, type, row) {
+         val2Ret=''
+         if ((data===null)||(data.length === 0)){
+           val2Ret='<span class="float-right badge bg-success">Disponible</span>';
+         }else{
+            val2Ret='<span class="float-right badge bg-warning">'+data+'</span>';
+         }
+         return  val2Ret;
+}},
      { "mData": "id",
        "mRender": function (data, type, row) {
         return '<div class="btn-group"><button type="button" class="btn btn-info">Opciones</button><button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button><div class="dropdown-menu" role="menu" style=""><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Liberar</a></div></div>';}
