@@ -24,7 +24,7 @@
 $(document).ready(function() {
   var table
  table=$('#sectores').DataTable( {
-   
+
    "stateSave": true,
    "scrollX": true,
     "pageLength": 50,
@@ -85,7 +85,7 @@ $(document).ready(function() {
 }},
      { "mData": "id",
        "mRender": function (data, type, row) {
-        return '<div class="btn-group"><button type="button" class="btn btn-info">Opciones</button><button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button><div class="dropdown-menu" role="menu" style=""><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Liberar</a></div></div>';}
+        return '<div class="btn-group"><button type="button" class="btn btn-info"><i class="fas fa-align-center"></i></button><button type="button" class="btn btn-info dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false"><span class="sr-only">Toggle Dropdown</span></button><div class="dropdown-menu" role="menu" style=""><a class="dropdown-item" href="#">Editar</a><a class="dropdown-item" href="#">Liberar</a></div></div>';}
 }
    ],
    "paging": true,
@@ -211,7 +211,7 @@ $(document).ready(function() {
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="sectores" class="table table-bordered table-striped">
+                <table id="sectores" class="table table-bordered table-striped" style="width:100%">
                   <thead>
                   <tr>
                     <th>Sector</th>
