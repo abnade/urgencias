@@ -24,14 +24,20 @@
 $(document).ready(function() {
   var table
  table=$('#sectores').DataTable( {
+   
+   "stateSave": true,
    "scrollX": true,
+    "pageLength": 50,
    "dom": 'Bfrtip',
    "exportOptions": {
     "columns": ':visible',
    "rows": ':visible'
 },
    "buttons": [
-             'colvis',
+     {
+        extend: 'colvis',
+        text: 'Ocultar columnas',
+  },
              {
                 extend: 'excel',
                 text: 'Excel',
